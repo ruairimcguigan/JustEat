@@ -10,8 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import eat.just.demo.tech.justeat.R;
+import eat.just.demo.tech.justeat.app.BaseActivity;
 
-public class RestaurantsSelectionActivity extends AppCompatActivity {
+public class RestaurantsSelectionActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
