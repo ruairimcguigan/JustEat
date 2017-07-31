@@ -1,5 +1,6 @@
 package eat.just.demo.tech.justeat.app.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
@@ -11,7 +12,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import eat.just.demo.tech.justeat.R;
 
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView{
+import static eat.just.demo.tech.justeat.app.util.Constants.SERVICE_DEPENDENCY_INJECTOR;
+
+public abstract class BaseActivity<C, P extends BasePresenter>
+        extends AppCompatActivity implements BaseView{
 
     protected P presenter;
 
@@ -29,7 +33,40 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     public abstract void setupDependencies();
 
-    public void setToolbar(String title, String contentDescription, @DrawableRes int backIcon, View.OnClickListener onBack) {
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showNoConnectivityMessage() {
+
+    }
+
+    @Override
+    public void showTimeOutMessage() {
+
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @SuppressWarnings({"ResourceType", "unchecked"})
+    public C getInjector(){
+        return (C)  getContext()
+                .getApplicationContext()
+                .getSystemService(SERVICE_DEPENDENCY_INJECTOR);
+    }
+
+    public void setToolbar(String title, String contentDescription, @DrawableRes int backIcon,
+                           View.OnClickListener onBack) {
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationIcon(backIcon);
