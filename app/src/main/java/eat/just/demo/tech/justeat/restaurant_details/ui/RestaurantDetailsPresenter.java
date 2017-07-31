@@ -1,8 +1,35 @@
 package eat.just.demo.tech.justeat.restaurant_details.ui;
 
-/**
- * Created by c0249298 on 30/07/2017.
- */
+import eat.just.demo.tech.justeat.app.base.BasePresenter;
 
-public class RestaurantDetailsPresenter {
+
+public class RestaurantDetailsPresenter extends BasePresenter {
+
+    private RestaurantDetailsView view;
+
+    public RestaurantDetailsPresenter(RestaurantDetailsView view) {
+        this.view = view;
+    }
+
+
+    @Override
+    public void getRestaurantId(String id) {
+
+    }
+
+    @Override
+    public void getRestaurantLogo() {
+
+    }
+
+
+    @Override
+    public void onNoConnectivity() {
+
+    }
+
+    @Override
+    public void onTimeOut() {
+
+    }
 }

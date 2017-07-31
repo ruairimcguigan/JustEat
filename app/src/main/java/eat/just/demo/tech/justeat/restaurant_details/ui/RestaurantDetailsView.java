@@ -1,8 +1,7 @@
 package eat.just.demo.tech.justeat.restaurant_details.ui;
 
-/**
- * Created by c0249298 on 30/07/2017.
- */
+import eat.just.demo.tech.justeat.app.base.BaseView;
 
-public class RestaurantDetailsView {
+public interface RestaurantDetailsView extends BaseView {
+
 }

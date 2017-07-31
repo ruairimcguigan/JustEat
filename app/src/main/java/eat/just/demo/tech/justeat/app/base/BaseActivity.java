@@ -1,4 +1,4 @@
-package eat.just.demo.tech.justeat.app;
+package eat.just.demo.tech.justeat.app.base;
 
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
@@ -8,9 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import eat.just.demo.tech.justeat.R;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView{
+
+    protected P presenter;
 
     @BindView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -19,6 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_activity);
+        ButterKnife.bind(this);
 
         setupDependencies();
     }
@@ -39,11 +43,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public void showProgress(){
-    }
-
-    public void hideProgress(){
-
-    }
 
 }

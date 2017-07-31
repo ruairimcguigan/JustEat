@@ -3,21 +3,20 @@ package eat.just.demo.tech.justeat.restaurant_selection.ui;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import eat.just.demo.tech.justeat.R;
-import eat.just.demo.tech.justeat.app.BaseActivity;
+import eat.just.demo.tech.justeat.app.base.BaseActivity;
 
-public class RestaurantsSelectionActivity extends BaseActivity {
+public class RestaurantsSelectionActivity extends BaseActivity <RestaurantSelectionPresenter>
+        implements RestaurantSelectionView{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,6 +28,16 @@ public class RestaurantsSelectionActivity extends BaseActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    public void setupDependencies() {
+
+        // todo set dagger deps
+
+        // set presenter
+        presenter = new RestaurantSelectionPresenter(this);
+
     }
 
     @Override
@@ -45,5 +54,25 @@ public class RestaurantsSelectionActivity extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void showNoConnectivityMessage() {
+
+    }
+
+    @Override
+    public void showTimeOutMessage() {
+
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
     }
 }

@@ -1,8 +1,33 @@
 package eat.just.demo.tech.justeat.restaurant_selection.ui;
 
-/**
- * Created by c0249298 on 30/07/2017.
- */
+import eat.just.demo.tech.justeat.app.base.BasePresenter;
 
-public class RestaurantSelectionPresenter {
+class RestaurantSelectionPresenter extends BasePresenter{
+
+    private RestaurantSelectionView view;
+
+    public RestaurantSelectionPresenter(RestaurantSelectionView view) {
+        this.view = view;
+    }
+
+
+    @Override
+    public void getRestaurantId(String id) {
+
+    }
+
+    @Override
+    public void getRestaurantLogo() {
+
+    }
+
+    @Override
+    public void onNoConnectivity() {
+
+    }
+
+    @Override
+    public void onTimeOut() {
+
+    }
 }
