@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eat.just.demo.tech.justeat">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.JustEatApplication"
         android:allowBackup="true"
@@ -23,7 +25,13 @@
         <activity
             android:name=".restaurant_details.ui.RestaurantDetailsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!--todo  implement service-->
+        <!--<service-->
+            <!--android:name="service.CurrentLocationService"-->
+            <!--android:exported="false" />-->
+
     </application>
 
 </manifest>

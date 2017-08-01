@@ -1,4 +1,4 @@
-package eat.just.demo.tech.justeat.app.ui.di;
+package eat.just.demo.tech.justeat.app.ui.module;
 
 import android.content.Context;
 import android.content.SharedPreferences;

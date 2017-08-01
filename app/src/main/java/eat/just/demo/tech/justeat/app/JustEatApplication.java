@@ -4,9 +4,9 @@ import android.app.Application;
 
 import com.squareup.leakcanary.LeakCanary;
 
-import eat.just.demo.tech.justeat.app.ui.di.AppComponent;
-import eat.just.demo.tech.justeat.app.ui.di.AppModule;
-import eat.just.demo.tech.justeat.app.ui.di.DaggerAppComponent;
+import eat.just.demo.tech.justeat.app.ui.module.AppComponent;
+import eat.just.demo.tech.justeat.app.ui.module.AppModule;
+import eat.just.demo.tech.justeat.app.ui.module.DaggerAppComponent;
 import timber.log.Timber;
 
 import static eat.just.demo.tech.justeat.app.util.Constants.SERVICE_DEPENDENCY_INJECTOR;

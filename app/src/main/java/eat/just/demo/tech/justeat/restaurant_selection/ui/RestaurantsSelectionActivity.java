@@ -11,7 +11,7 @@ import javax.inject.Inject;
 
 import eat.just.demo.tech.justeat.R;
 import eat.just.demo.tech.justeat.app.base.BaseActivity;
-import eat.just.demo.tech.justeat.app.ui.di.AppComponent;
+import eat.just.demo.tech.justeat.app.ui.module.AppComponent;
 
 public class RestaurantsSelectionActivity extends BaseActivity <AppComponent, RestaurantSelectionPresenter>
         implements RestaurantSelectionView{
