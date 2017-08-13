@@ -2,8 +2,6 @@ package eat.just.demo.tech.justeat.app;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
-
 import timber.log.Timber;
 
 import static eat.just.demo.tech.justeat.app.util.Constants.SERVICE_DEPENDENCY_INJECTOR;
@@ -16,21 +14,21 @@ public class JustEatApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initLeakCanary();
+//        initLeakCanary();
         initDagger();
         initTimber();
         initStrictMode();
     }
 
-    private void initLeakCanary() {
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
-    }
+//    private void initLeakCanary() {
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
+//    }
 
     private void initDagger() {
         Timber.d("Pre-Set up object graph");
