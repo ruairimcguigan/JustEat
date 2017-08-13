@@ -10,12 +10,14 @@ import android.view.View;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import eat.just.demo.tech.core_lib.base.BasePresenter;
+import eat.just.demo.tech.core_lib.base.BaseView;
 import eat.just.demo.tech.justeat.R;
 
 import static eat.just.demo.tech.justeat.app.util.Constants.SERVICE_DEPENDENCY_INJECTOR;
 
 public abstract class BaseActivity<C, P extends BasePresenter>
-        extends AppCompatActivity implements BaseView{
+        extends AppCompatActivity implements BaseView {
 
     protected P presenter;
 

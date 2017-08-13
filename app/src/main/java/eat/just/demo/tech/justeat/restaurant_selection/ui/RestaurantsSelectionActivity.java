@@ -9,12 +9,15 @@ import android.widget.Toast;
 
 import javax.inject.Inject;
 
+import eat.just.demo.tech.core_lib.base.BaseView;
+import eat.just.demo.tech.core_lib.restaurant.selection.RestaurantSelectionPresenter;
+import eat.just.demo.tech.core_lib.restaurant.selection.RestaurantSelectionView;
 import eat.just.demo.tech.justeat.R;
+import eat.just.demo.tech.justeat.app.AppComponent;
 import eat.just.demo.tech.justeat.app.base.BaseActivity;
-import eat.just.demo.tech.justeat.app.ui.module.AppComponent;
 
 public class RestaurantsSelectionActivity extends BaseActivity <AppComponent, RestaurantSelectionPresenter>
-        implements RestaurantSelectionView{
+        implements BaseView, RestaurantSelectionView {
 
     @Inject
     SharedPreferences prefs;
