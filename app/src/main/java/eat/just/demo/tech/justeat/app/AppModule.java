@@ -8,6 +8,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import eat.just.demo.tech.justeat.app.util.Constants;
+import okhttp3.HttpUrl;
 
 /**
  * This module provides global UI related dependencies.
@@ -33,4 +35,11 @@ public class AppModule {
     public SharedPreferences provideSharedPreferences(Context context){
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
+
+    @Provides
+    @Singleton
+    HttpUrl provideEndpoint() {
+        return HttpUrl.parse(Constants.BASE_URL);
+    }
+
 }
